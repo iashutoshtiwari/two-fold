@@ -1,0 +1,21 @@
+{
+  "name": "two-fold",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "dev": "concurrently -n signaling,web -c cyan,magenta \"npm run dev --workspace backend\" \"npm run dev --workspace frontend\"",
+    "test": "npm run test --workspace backend",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

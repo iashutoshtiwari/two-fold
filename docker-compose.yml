@@ -1,0 +1,19 @@
+services:
+  signaling:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      NODE_ENV: production
+      PORT: 3001
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS:-http://localhost:5173}
+    ports:
+      - "${SIGNALING_PORT:-3001}:3001"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://127.0.0.1:3001/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+
