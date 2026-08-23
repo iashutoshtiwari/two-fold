@@ -1,6 +1,10 @@
-# Two Fold
+<div align="center">
+  <img src="frontend/src/assets/video-call-icon.svg" alt="Two Fold logo" width="88" height="88" />
+  <h1>Two Fold</h1>
+  <p>Private one-to-one video calls and text chat powered by WebRTC.</p>
+</div>
 
-Private one-to-one video calls and text chat powered by WebRTC. The signaling server only exchanges connection metadata; media and messages travel directly between peers.
+The signaling server only exchanges connection metadata; media and messages travel directly between peers.
 
 ## Screenshots
 
@@ -59,4 +63,3 @@ docker compose logs -f signaling
 ```
 
 The frontend can be deployed to Vercel from `frontend/`. Deploy the backend container to a persistent WebSocket-capable host and set `VITE_SIGNALING_URL` and `ALLOWED_ORIGINS` to the deployed URLs.
-
