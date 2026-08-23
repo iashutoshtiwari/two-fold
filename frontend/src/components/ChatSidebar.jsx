@@ -24,7 +24,7 @@ export function ChatSidebar({ messages, isOpen, onSend }) {
         </div>
         <span
           aria-hidden="true"
-          className={`h-2.5 w-2.5 rounded-full ${isOpen ? "bg-emerald-400" : "bg-zinc-700"}`}
+          className={`h-2.5 w-2.5 rounded-full ${isOpen ? "bg-[#4caf50]" : "bg-zinc-700"}`}
         />
       </div>
 
@@ -43,7 +43,7 @@ export function ChatSidebar({ messages, isOpen, onSend }) {
               key={message.id}
               className={`max-w-[85%] rounded-2xl px-3.5 py-2.5 text-sm leading-5 ${
                 message.sender === "local"
-                  ? "ml-auto rounded-br-md bg-indigo-500 text-white"
+                  ? "ml-auto rounded-br-md bg-[#4caf50] text-white"
                   : "mr-auto rounded-bl-md bg-zinc-800 text-zinc-100"
               }`}
             >
@@ -72,12 +72,12 @@ export function ChatSidebar({ messages, isOpen, onSend }) {
             maxLength={2000}
             disabled={!isOpen}
             placeholder={isOpen ? "Write a message…" : "Waiting for peer…"}
-            className="min-w-0 flex-1 rounded-lg border border-white/10 bg-zinc-900 px-3 py-2.5 text-sm text-zinc-100 outline-none placeholder:text-zinc-600 focus:border-indigo-400 disabled:cursor-not-allowed disabled:opacity-50"
+            className="min-w-0 flex-1 rounded-lg border border-white/10 bg-zinc-900 px-3 py-2.5 text-sm text-zinc-100 caret-[#4caf50] outline-none placeholder:text-zinc-600 focus:border-[#4caf50] focus:ring-2 focus:ring-[#4caf50]/20 disabled:cursor-not-allowed disabled:opacity-50"
           />
           <button
             type="submit"
             disabled={!isOpen || !draft.trim()}
-            className="rounded-lg bg-indigo-500 px-4 text-sm font-semibold text-white hover:bg-indigo-400 disabled:cursor-not-allowed disabled:bg-zinc-800 disabled:text-zinc-600"
+            className="rounded-lg bg-[#4caf50] px-4 text-sm font-semibold text-white hover:bg-[#388e3c] disabled:cursor-not-allowed disabled:bg-zinc-800 disabled:text-zinc-600"
           >
             Send
           </button>

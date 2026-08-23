@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { ChatSidebar } from "./components/ChatSidebar";
 import { useWebRTC } from "./hooks/useWebRTC";
+import videoCallIcon from "./assets/video-call-icon.svg";
 
 const STATUS_TEXT = {
   idle: "Ready to join",
@@ -85,7 +86,12 @@ export default function App() {
       <header className="border-b border-white/10 bg-zinc-950 px-4 py-3 sm:px-6">
         <div className="mx-auto flex max-w-[1600px] flex-wrap items-center gap-3">
           <div className="mr-auto flex items-center gap-3">
-            <div className="grid h-9 w-9 place-items-center rounded-lg bg-indigo-500 text-xs font-bold">TF</div>
+            <img
+              src={videoCallIcon}
+              alt=""
+              aria-hidden="true"
+              className="h-9 w-9 shrink-0"
+            />
             <div>
               <h1 className="text-sm font-semibold tracking-wide">Two Fold</h1>
               <p className="text-xs text-zinc-500">One-to-one WebRTC</p>
@@ -108,7 +114,7 @@ export default function App() {
             maxLength={64}
             autoComplete="off"
             placeholder="Room ID"
-            className="w-44 rounded-lg border border-white/10 bg-zinc-900 px-3.5 py-2 text-sm outline-none placeholder:text-zinc-600 focus:border-indigo-400 disabled:opacity-60 sm:w-56"
+            className="w-44 rounded-lg border border-white/10 bg-zinc-900 px-3.5 py-2 text-sm caret-[#4caf50] outline-none placeholder:text-zinc-600 focus:border-[#4caf50] focus:ring-2 focus:ring-[#4caf50]/20 disabled:opacity-60 sm:w-56"
           />
           {isJoined ? (
             <button
@@ -123,7 +129,7 @@ export default function App() {
               type="button"
               onClick={() => join()}
               disabled={!roomId.trim() || isBusy}
-              className="rounded-lg bg-indigo-500 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-400 disabled:cursor-not-allowed disabled:bg-zinc-800 disabled:text-zinc-600"
+              className="rounded-lg bg-[#4caf50] px-4 py-2 text-sm font-semibold text-white hover:bg-[#388e3c] disabled:cursor-not-allowed disabled:bg-zinc-800 disabled:text-zinc-600"
             >
               {isBusy ? "Joining…" : "Join"}
             </button>
@@ -147,7 +153,7 @@ export default function App() {
               aria-hidden="true"
               className={`h-2 w-2 shrink-0 rounded-full ${
                 status === "connected"
-                  ? "bg-emerald-400"
+                  ? "bg-[#4caf50]"
                   : error
                     ? "bg-rose-400"
                     : isWarning

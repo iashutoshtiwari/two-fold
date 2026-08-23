@@ -13,6 +13,11 @@
   scrollbar-width: thin;
 }
 
+::selection {
+  background: #388e3c;
+  color: white;
+}
+
 body {
   margin: 0;
   min-width: 320px;
