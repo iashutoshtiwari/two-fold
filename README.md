@@ -10,7 +10,14 @@ The signaling server only exchanges connection metadata; media and messages trav
 
 ![Two Fold desktop interface](docs/screenshots/two-fold-desktop.png)
 
-<img src="docs/screenshots/two-fold-mobile.png" alt="Two Fold mobile interface" width="320" />
+### Connected call
+
+![Two Fold connected desktop call](docs/screenshots/two-fold-connected-desktop.png)
+
+<p align="center">
+  <img src="docs/screenshots/two-fold-mobile.png" alt="Two Fold mobile interface" width="320" />
+  <img src="docs/screenshots/two-fold-connected-mobile.png" alt="Two Fold connected mobile call" width="320" />
+</p>
 
 ## Features
 
